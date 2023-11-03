@@ -1,0 +1,24 @@
+let m = 0;
+const calculateWeight = (earthWeight, planet) => {
+    switch (planet) {
+        case 'Mercury':
+            m =.378;
+            break;
+        case 'Venus':
+            m = .907;
+            break;
+        case 'Mars':
+            m = .377;
+            break;
+        case 'Jupiter':
+            m = 2.36;
+            break;
+        case 'Saturn':
+            m = .916;
+            break;
+        default:
+        return 'Invalid Planet Entry. Try: Mercury, Venus, Mars, Jupiter, or Saturn.'
+    }
+    return earthWeight * m;
+}
+console.log(calculateWeight(100, "Jupiter"));
