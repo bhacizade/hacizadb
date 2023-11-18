@@ -1,0 +1,62 @@
+const getSleepHours = day => {
+
+    switch (day) {
+      case 'monday':
+      return 8
+      break;
+      case 'tuesday':
+      return 7
+      break;
+      case 'wednesday':
+      return 6
+      break;
+      case 'thursday':
+      return 8
+      break;
+      case 'friday':
+      return 8
+      break;
+      case 'saturday':
+      return 4
+      break;
+      case 'sunday':
+      return 8
+      break;
+      default: 
+      return "ERROR!";
+    }
+  };
+  
+  const getActualSleepHours = () => 
+    getSleepHours('monday') +
+    getSleepHours('tuesday') +
+    getSleepHours('wednesday') +
+    getSleepHours('thursday') +
+    getSleepHours('friday') +
+    getSleepHours('saturday') +
+    getSleepHours('sunday') ;
+  
+
+  const getIdealSleepHours =()=> {
+    let idealSleepHours = 8;
+    return idealSleepHours * 7 ;
+  };
+
+  const calculateSleepDebt =()=>{
+    let actualSleepHours = getActualSleepHours();
+    let idealSleepHours = getIdealSleepHours();
+
+    if (actualSleepHours === idealSleepHours) {
+      console.log("yuxu saatiniz idealdir.");
+    }
+    else if (actualSleepHours < idealSleepHours ) {
+      console.log("yuxu saatiniz azdir " + (idealSleepHours - actualSleepHours) + " biraz daha dincelmelisiniz.");
+    }
+    else if (actualSleepHours > idealSleepHours ) {
+      console.log ("cox yataraq" + (idealSleepHours - actualSleepHours) + "cox sey qacira bilersiniz.");
+    }
+    else { 
+      console.log("Error! nese duz getmedi.");
+    }
+  };
+    calculateSleepDebt();
