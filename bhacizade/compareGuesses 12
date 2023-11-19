@@ -1,0 +1,18 @@
+function compareGuesses(humanGuess, computerGuess, targetNumber) {
+    const humanDifference = Math.abs(targetNumber - humanGuess);
+    const computerDifference = Math.abs(targetNumber - computerGuess);
+
+    if (humanDifference <= computerDifference) {
+        return true;  // Human wins or it's a tie
+    } else {
+        return false;  // Computer wins
+    }
+}
+
+// Example usage:
+const humanGuess = 25;
+const computerGuess = 30;
+const targetNumber = 28;
+
+const humanWins = compareGuesses(humanGuess, computerGuess, targetNumber);
+console.log("Human wins?", humanWins);
